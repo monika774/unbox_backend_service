@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #This is app name
     'unbox_speed_app',
-    'channels',
+    # This is django Channels to handle WebSockets and asynchronous operation as support 
+    'channels',  
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
@@ -72,7 +74,7 @@ TEMPLATES = [
         },
     },
 ]
-
+#This is used instead of the default WSGI application to support asynchronous requests.
 WSGI_APPLICATION = 'unbox_project.wsgi.application'
 
 

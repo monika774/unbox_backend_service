@@ -1,9 +1,9 @@
 from django.db import models
 from django.utils import timezone
 
+# Create your models here.
 class SpeedData(models.Model):
-    """   Model to store speed data points  """
-    speed = models.FloatField()  
+    speed = models.FloatField(max_length=255)  
     timestamp = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -11,5 +11,6 @@ class SpeedData(models.Model):
         verbose_name_plural = "Speed Data"
 
     def __str__(self):
-        return f"Speed: {self.speed} at {self.timestamp}"
-    
+        return f"{self.speed} + {self.timestamp}"
+     
+   

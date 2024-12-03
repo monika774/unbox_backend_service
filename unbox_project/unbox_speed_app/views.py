@@ -14,6 +14,9 @@ class SpeedDataViewSet(viewsets.ModelViewSet):
     serializer_class = SpeedDataSerializer
     
     def get_data(self, request):
+        """
+            This function uses for retriving data
+        """
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many=True)
         # print(serializer.data)
@@ -21,6 +24,9 @@ class SpeedDataViewSet(viewsets.ModelViewSet):
     
     
     def create_data(self, request):
+        """
+        This function used for generating data
+        """
         if hasattr(request, 'data'):
             serializer = self.get_serializer(data=request.data)
         else:
@@ -31,6 +37,9 @@ class SpeedDataViewSet(viewsets.ModelViewSet):
     
    
     def create_data_at_intervals(self,request):
+        """
+        This function showing speed at interval using random speed and current time 
+        """
         while True:
             new_obj = {}
             new_obj['speed'] = random.randint(1, 100)
